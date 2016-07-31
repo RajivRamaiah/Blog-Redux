@@ -1,1 +1,1 @@
-# js-starter with react react-router babel sass and eslint
+# See the "With-Redux" branch to view the blog source code
