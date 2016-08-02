@@ -1,7 +1,7 @@
 {
-  "name": "js-react-starter",
+  "name": "Blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Redux Blog",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -43,6 +43,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "axios": "^0.13.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
