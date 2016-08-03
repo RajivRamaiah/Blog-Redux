@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 
 import PostsReducer from './posts-reducer';
 
-const rootReducer = combineReducers({
+const allReducers = combineReducers({
   posts: {
     all: [],
     post: null,
   },
 });
 
-export default rootReducer;
+export default allReducers;
