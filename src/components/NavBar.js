@@ -16,29 +16,10 @@ class NavBar extends Component {
     this.createStickyNote = this.createStickyNote.bind(this);
   }
 
-  onInputChange(event) {
-    this.setState({ title: event.target.value });
-  }
-
-  //  source for event methods/needs: https://facebook.github.io/react/docs/events.html
-  //  add note to board
-  createStickyNote(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    this.props.createNote(this.state.title);
-    //  reset title to clear create bar
-    this.setState({
-      title: '',
-    });
-  }
-
   render() {
     return (
-      <div>
-        <form id="create-post" onSubmit={this.createStickyNote}>
-          <input placeholder="Add a title for your note!" onChange={this.onInputChange} value={this.state.title} />
-          <button id="create-button" type="submit">Create Note!</button>
-        </form>
+      <div className="NavBar">
+        <button type="Button"> New </button>
       </div>
     );
   }
