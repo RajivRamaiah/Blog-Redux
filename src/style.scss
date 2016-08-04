@@ -21,32 +21,41 @@ hr.style1{
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
-
+  
   #name {
     font-size: 16pt;
+    color: black;
   }
-
   #new {
+    color: blue;
+    border-color: black;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 2px 2px 2px 2px;
     font-size: 16pt;
   }
 }
 
 .post {
-  background: darken(white, 15%);
+  background: darken(white, 5%);
   color: blue;
   height: 80px;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-width: medium;
-  border-style: dotted;
+  border-style: solid;;
   border-color: black;
+}
+
+.post:hover {
+  background: darken(white, 10%);
 }
 
 .New-Post {

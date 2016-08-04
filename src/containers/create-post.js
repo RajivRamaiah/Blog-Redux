@@ -23,7 +23,23 @@ class NewPost extends Component {
 
 
   onSubmit() {
-    this.props.createPost({ title: this.state.title, tags: this.state.tags, content: this.state.content });
+    let title, tags, content;
+    if (!this.state.title) {
+      title = 'No Title';
+    } else {
+      title = this.state.title;
+    }
+    if (!this.state.tags) {
+      tags = 'No Tags';
+    } else {
+      tags = this.state.tags;
+    }
+    if (!this.state.content) {
+      content = 'No Content';
+    } else {
+      content = this.state.content;
+    }
+    this.props.createPost({ title, tags, content });
   }
 
   onCancel() {
