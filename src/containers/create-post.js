@@ -21,7 +21,6 @@ class NewPost extends Component {
     this.contentWasSet = this.contentWasSet.bind(this);
   }
 
-
   onSubmit() {
     let title, tags, content;
     if (!this.state.title) {
