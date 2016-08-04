@@ -1,7 +1,171 @@
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(10%, 10%, 10%);
-  background: darken(white, 10%);
+  // background: darken(white, 10%);
+  background-color: #6AB590;
   margin: 50px;
   font-size: 16px;
+}
+
+hr.style1{
+	border-top: 1px solid #8c8b8b;
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+
+  #name {
+    font-size: 16pt;
+  }
+
+  #new {
+    font-size: 16pt;
+  }
+}
+
+.post {
+  background: darken(white, 15%);
+  color: blue;
+  height: 80px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-width: medium;
+  border-style: dotted;
+  border-color: black;
+}
+
+.New-Post {
+  display: flex;
+  flex-direction: column;
+
+  #header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    // padding-bottom: 10px;
+    font-size: 25px;
+    color: black;
+
+    #cancel {
+      background-color: #ff4c4c;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+  }
+
+  #title {
+    padding-bottom: 10px;
+    font-size: 24px;
+
+    input {
+      width: 30%;
+      height: 80%;
+      font-size: 24pt;
+      border-radius: 5px;
+      border-style: dotted;
+    }
+  }
+
+  #tags {
+    padding-bottom: 10px;
+    font-size: 24px;
+
+    input {
+      width: 30%;
+      height: 80%;
+      font-size: 18pt;
+      border-radius: 5px;
+      border-style: dotted;
+    }
+  }
+
+  #content {
+    div {
+      padding-bottom: 10px;
+    }
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    font-size: 24px;
+
+    textarea {
+      width: 60%;
+      font-size: 12pt;
+      border-radius: 10px;
+      border-style: dotted;
+    }
+  }
+
+  //  Styling button: http://www.w3schools.com/css/css3_buttons.aspd
+  #submit button {
+    background-color: #3F6C40;
+    border-radius: 5px;
+    border-style: groove;
+    color: white;
+    padding: 15px 32px;
+    font-size: 18px;
+  }
+}
+
+.DisplayPost {
+  #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: black;
+
+    #title {
+      padding-top: 10px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 46pt;
+      // padding-bottom: 20px;
+    }
+  }
+
+  #tags {
+    padding-top: 20px;
+  }
+
+  #content {
+    padding-top: 10px;
+    // margin-top: 10px;
+  }
+
+  #delete-button button {
+    background-color: #ff4c4c;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 5px;
+    // text-decoration: none;
+    // display: inline-block;
+    font-size: 16px;
+  }
 }

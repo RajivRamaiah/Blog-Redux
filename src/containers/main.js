@@ -1,41 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
+import Post from '../components/post.js';
 
 class Main extends Component {
 
   componentWillMount() {
-    getAllPosts();
+    this.props.getAllPosts();
   }
 
   render() {
-    if (!this.props.posts) {
+    let posts = this.props.posts.map((post) => {
       return (
-        <p> No Posts </p>
+        <Post title={post.title} postId={post.id} tags={post.tags} key={post.id} />
       );
-    } else {
-      let posts = this.props.posts.map((post, index) => {
-        return (
-          <div className="post" >
-            {post.title}
-            <span>{post.tags}</span>
-          </div>
-        );
-      });
-      return (
-        <div>
-          {posts}
-        < /div>
-      );
-    }
+    });
+    return (
+      <div>
+        {posts}
+      </div>
+    );
   }
 
 }
 
-function mapStateToProps(state) {
+function mapsStateToProps(state) {
   return {
     posts: state.posts.all,
   };
 }
 
-export default connect(mapStateToProps, { getAllPosts })(Main);
+export default connect(mapsStateToProps, { getAllPosts })(Main);
