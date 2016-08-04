@@ -109,7 +109,23 @@ class ShowPost extends Component {
   }
 
   updatePost() {
-    this.props.updatePost(this.props.params.id, { title: this.state.title, tags: this.state.tags, content: this.state.content });
+    let title, tags, content;
+    if (!this.state.title) {
+      title = 'No Title';
+    } else {
+      title = this.state.title;
+    }
+    if (!this.state.tags) {
+      tags = 'No Tags';
+    } else {
+      tags = this.state.tags;
+    }
+    if (!this.state.content) {
+      content = 'No Content';
+    } else {
+      content = this.state.content;
+    }
+    this.props.updatePost(this.props.params.id, { title, tags, content });
   }
 
   displayTitle() {
