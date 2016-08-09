@@ -2,10 +2,8 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 
 // const BASE_URL = 'https://cs52-blog.herokuapp.com/api';
-const BASE_URL = 'https://backend-hw5.herokuapp.com/api';
-// const BASE_URL = 'http://localhost:9090/api';
-
-const API_KEY = 'r_ramaiah';
+// const BASE_URL = 'https://backend-hw5.herokuapp.com/api';
+const BASE_URL = 'http://localhost:9090/api';
 
 // keys for actiontypes
 export const ActionTypes = {
@@ -21,7 +19,7 @@ export function getAllPosts() {
   // ActionCreator returns a function
   // that gets called with dispatch
   return (dispatch) => {
-    axios.get(`${BASE_URL}/posts/?key=${API_KEY}`).then(response => {
+    axios.get(`${BASE_URL}/posts/`).then(response => {
       console.log(response.data);
       dispatch({
         type: ActionTypes.FETCH_POSTS,
@@ -37,7 +35,7 @@ export function getAllPosts() {
 //  https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY
 export function getPost(id) {
   return (dispatch) => {
-    axios.get(`${BASE_URL}/posts/${id}?key=${API_KEY}`).then(response => {
+    axios.get(`${BASE_URL}/posts/${id}`).then(response => {
       console.log(response.data);
       dispatch({
         type: ActionTypes.FETCH_POST,
@@ -53,7 +51,7 @@ export function getPost(id) {
 //  https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY
 export function deletePost(id) {
   return (dispatch) => {
-    axios.delete(`${BASE_URL}/posts/${id}?key=${API_KEY}`).then(response => {
+    axios.delete(`${BASE_URL}/posts/${id}`).then(response => {
       console.log(response.data);
       dispatch({
         type: ActionTypes.DELETE_POST,
@@ -70,7 +68,7 @@ export function deletePost(id) {
 //  https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY
 export function updatePost(id, fields) {
   return (dispatch) => {
-    axios.put(`${BASE_URL}/posts/${id}?key=${API_KEY}`, fields).then(response => {
+    axios.put(`${BASE_URL}/posts/${id}`, fields).then(response => {
       console.log(response.data);
       dispatch({
         type: ActionTypes.UPDATE_POST,
@@ -86,7 +84,7 @@ export function updatePost(id, fields) {
 //  https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY
 export function createPost(fields) {
   return (dispatch) => {
-    axios.post(`${BASE_URL}/posts/?key=${API_KEY}`, fields).then(response => {
+    axios.post(`${BASE_URL}/posts/`, fields).then(response => {
       console.log(response.data);
       dispatch({
         type: ActionTypes.CREATE_POST,
