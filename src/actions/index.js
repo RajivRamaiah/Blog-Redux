@@ -2,7 +2,9 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 
 // const BASE_URL = 'https://cs52-blog.herokuapp.com/api';
-const BASE_URL = 'http://localhost:9090/api';
+const BASE_URL = 'https://backend-hw5.herokuapp.com/api';
+// const BASE_URL = 'http://localhost:9090/api';
+
 const API_KEY = 'r_ramaiah';
 
 // keys for actiontypes
@@ -36,6 +38,7 @@ export function getAllPosts() {
 export function getPost(id) {
   return (dispatch) => {
     axios.get(`${BASE_URL}/posts/${id}?key=${API_KEY}`).then(response => {
+      console.log(response.data);
       dispatch({
         type: ActionTypes.FETCH_POST,
         payload: response.data });
@@ -49,9 +52,9 @@ export function getPost(id) {
 
 //  https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY
 export function deletePost(id) {
-  console.log('deleting');
   return (dispatch) => {
     axios.delete(`${BASE_URL}/posts/${id}?key=${API_KEY}`).then(response => {
+      console.log(response.data);
       dispatch({
         type: ActionTypes.DELETE_POST,
         payload: null });
@@ -66,9 +69,9 @@ export function deletePost(id) {
 
 //  https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY
 export function updatePost(id, fields) {
-  console.log(`updating ${id}`);
   return (dispatch) => {
     axios.put(`${BASE_URL}/posts/${id}?key=${API_KEY}`, fields).then(response => {
+      console.log(response.data);
       dispatch({
         type: ActionTypes.UPDATE_POST,
         payload: null });
