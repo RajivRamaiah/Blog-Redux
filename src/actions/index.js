@@ -22,7 +22,9 @@ export const ActionTypes = {
 export function signoutUser() {
   return (dispatch) => {
     localStorage.removeItem('token');
-    dispatch({ type: ActionTypes.DEAUTH_USER });
+    dispatch({
+      type: ActionTypes.DEAUTH_USER,
+    });
     browserHistory.push('/');
   };
 }
@@ -45,7 +47,8 @@ export function getAllPosts() {
       console.log(response.data);
       dispatch({
         type: ActionTypes.FETCH_POSTS,
-        payload: response.data });
+        payload: response.data,
+      });
       // do something with response.data  (some json)
     }).catch(error => {
       // hit an error do something else!
@@ -61,7 +64,8 @@ export function getPost(id) {
       console.log(response.data);
       dispatch({
         type: ActionTypes.FETCH_POST,
-        payload: response.data });
+        payload: response.data,
+      });
       // do something with response.data  (some json)
     }).catch(error => {
       // hit an error do something else!
@@ -74,10 +78,10 @@ export function getPost(id) {
 export function deletePost(id) {
   return (dispatch) => {
     axios.delete(`${BASE_URL}/posts/${id}`, { headers: { authorization: localStorage.getItem('token') } }).then(response => {
-      console.log(response.data);
       dispatch({
         type: ActionTypes.DELETE_POST,
-        payload: null });
+        payload: null,
+      });
       browserHistory.push('/');
       // do something with response.data  (some json)
     }).catch(error => {
@@ -94,7 +98,8 @@ export function updatePost(id, fields) {
       console.log(response.data);
       dispatch({
         type: ActionTypes.UPDATE_POST,
-        payload: null });
+        payload: null,
+      });
       // do something with response.data  (some json)
     }).catch(error => {
       // hit an error do something else!
@@ -110,7 +115,8 @@ export function createPost(fields) {
       console.log(response.data);
       dispatch({
         type: ActionTypes.CREATE_POST,
-        payload: null });
+        payload: null,
+      });
       browserHistory.push('/');
       // do something with response.data  (some json)
     }).catch(error => {
@@ -144,7 +150,7 @@ export function signinUser({ email, password }) {
   };
 }
 
-export function signupUser({ email, password }) {
+export function signupUser({ email, password, username }) {
   // takes in an object with email and password (minimal user object)
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   // does an axios.post on the /signup endpoint (only difference from above)
@@ -154,7 +160,7 @@ export function signupUser({ email, password }) {
   // on error should dispatch(authError(`Sign Up Failed: ${error.response.data}`));
 
   return (dispatch) => {
-    axios.post(`${BASE_URL}/signup/`, { email, password }).then(response => {
+    axios.post(`${BASE_URL}/signup/`, { email, password, username }).then(response => {
       console.log('sign up called');
       dispatch({
         type: ActionTypes.AUTH_USER,

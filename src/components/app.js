@@ -1,6 +1,6 @@
 //  Sources https://www.youtube.com/watch?v=DiLVAXlVYR0
 import React, { Component } from 'react';
-import NavBar from './navbar.js';
+import NavBar from '../containers/navbar.js';
 
 // example class based component (smart component)
 class App extends Component {

@@ -4,8 +4,8 @@ import Main from './containers/main.js';
 import App from './components/app.js';
 import NewPost from './containers/create-post.js';
 import ShowPost from './containers/display-post.js';
-import SignUp from './components/sign-up';
-import SignIn from './components/sign-in';
+import SignUp from './containers/sign-up';
+import SignIn from './containers/sign-in';
 import RequireAuth from './containers/require-auth';
 
 export default(

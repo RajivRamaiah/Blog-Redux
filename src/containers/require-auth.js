@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 
 export default function (ComposedComponent) {
   class RequireAuth extends React.Component {
+
     componentWillMount() {
       if (!this.props.authenticated) {
         browserHistory.push('/');
@@ -28,7 +29,6 @@ export default function (ComposedComponent) {
       authenticated: state.auth.authenticated,
     }
   );
-
 
   return connect(mapStateToProps, null)(RequireAuth);
 }

@@ -4,8 +4,8 @@ import { signinUser } from '../actions';
 import { Link } from 'react-router';
 
 class SignIn extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       email: '',
@@ -59,10 +59,4 @@ class SignIn extends Component {
   }
 }
 
-const mapDispatchToProps = (state) => (
-  {
-    authenticated: state.auth.authenticated,
-  }
-);
-
-export default connect(mapDispatchToProps, signinUser)(SignIn);
+export default connect(null, { signinUser })(SignIn);

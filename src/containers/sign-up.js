@@ -4,17 +4,25 @@ import { signupUser } from '../actions';
 import { Link } from 'react-router';
 
 class SignUp extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       email: '',
       password: '',
+      username: '',
     };
 
     this.emailWasChanged = this.emailWasChanged.bind(this);
+    this.usernameWasChanged = this.usernameWasChanged.bind(this);
     this.passwordWasChanged = this.passwordWasChanged.bind(this);
     this.signUserUp = this.signUserUp.bind(this);
+  }
+
+  usernameWasChanged(event) {
+    this.setState({
+      username: event.target.value,
+    });
   }
 
   emailWasChanged(event) {
@@ -33,6 +41,7 @@ class SignUp extends Component {
     this.props.signupUser({
       email: this.state.email,
       password: this.state.password,
+      username: this.state.username,
     });
   }
 
@@ -47,10 +56,15 @@ class SignUp extends Component {
         <div id="password">
           <input placeholder="Enter your password" value={this.state.password} onChange={this.passwordWasChanged} />
         </div>
+        <div id="username">
+          <input placeholder="Enter your username" value={this.state.username} onChange={this.usernameWasChanged} />
+        </div>
 
         <div id="buttons">
-          <div id="signup" onClick={this.signUserIn}>
-            Sign Up
+          <div id="signup">
+            <button onClick={this.signUserUp}>
+              Sign Up!
+            </button>
           </div>
           <Link to="/">Cancel</Link>
         </div>
@@ -59,10 +73,5 @@ class SignUp extends Component {
   }
 
 }
-const mapDispatchToProps = (state) => (
-  {
-    authenticated: state.auth.authenticated,
-  }
-);
 
-export default connect(mapDispatchToProps, signupUser)(SignUp);
+export default connect(null, { signupUser })(SignUp);
