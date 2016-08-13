@@ -16,7 +16,7 @@ const NavBar = (props) => {
           </div>
         </Link>
         <Link to="/signup">
-          <div className="auth-button white">
+          <div id="signup-button">
             Sign Up
           </div>
         </Link>
@@ -31,7 +31,7 @@ const NavBar = (props) => {
           </div>
         </Link>
         <Link to="/">
-          <div className="signout" onClick={props.signoutUser}>
+          <div id="signout" onClick={props.signoutUser}>
             Sign Out
           </div>
         </Link>
