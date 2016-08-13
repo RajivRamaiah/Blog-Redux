@@ -13,7 +13,7 @@ class ShowPost extends Component {
       isEditingTitle: false,
       isEditingContent: false,
       isEditingTags: false,
-      author: 'rajiv',
+      author: '',
       title: '',
       tags: '',
       content: '',
@@ -42,7 +42,7 @@ class ShowPost extends Component {
         title: props.post.title,
         tags: props.post.tags,
         content: props.post.content,
-        // author: props.post.author.username,
+        author: props.post.author.username,
       });
     }
   }
@@ -179,9 +179,11 @@ class ShowPost extends Component {
           <div id="title">
             {this.displayTitle()}
           </div>
+
           <div id="author">
             {`By: ${this.state.author}`}
           </div>
+
           <div id="tags">
             {this.displayTags()}
           </div>
