@@ -6,37 +6,49 @@ import { connect } from 'react-redux';
 import { signoutUser } from '../actions';
 
 const NavBar = (props) => {
-  if (props.authenticated) {
-    return (
-      <div className="NavBar">
-        <Link to="/">
-          <div id="name">
-            Welcome to the Adventures of Rajiv Ramaiah
-          </div>
-        </Link>
-        <Link to="/posts/new">
-          <div id="new">
-            New Post
-          </div>
-        </Link>
-      </div>
-    );
-  } else {
-    return (
-      <div className="NavBar">
+  let main;
+  if (!props.authenticated) {
+    main = (
+      <div className="nav-not-auth">
         <Link to="/signin">
-          <div id="Sign-In">
+          <div id="signin-button">
             Sign In
           </div>
         </Link>
         <Link to="/signup">
-          <div id="Sign-Up">
+          <div className="auth-button white">
             Sign Up
           </div>
         </Link>
       </div>
     );
+  } else {
+    main = (
+      <div className="nav-auth">
+        <Link to="/posts/new">
+          <div id="new">
+            New Post
+          </div>
+        </Link>
+        <Link to="/">
+          <div className="signout" onClick={props.signoutUser}>
+            Sign Out
+          </div>
+        </Link>
+      </div>
+    );
   }
+
+  return (
+    <div className="NavBar">
+      <Link to="/">
+        <div id="name">
+          Welcome to the Adventures of Rajiv Ramaiah
+        </div>
+      </Link>
+      {main}
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => (

@@ -11,7 +11,7 @@ import RequireAuth from './containers/require-auth';
 export default(
   <Route path="/" component={App}>
     <IndexRoute component={Main} />
-    <Route path="posts/new" component={NewPost} />
+    <Route path="posts/new" component={RequireAuth(NewPost)} />
     <Route path="posts/:id" component={ShowPost} />
     <Route path="/signup" component={SignUp} />
     <Route path="/signin" component={SignIn} />

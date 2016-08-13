@@ -57,7 +57,12 @@ class SignIn extends Component {
       </div>
     );
   }
-
 }
 
-export default connect(null, signinUser)(SignIn);
+const mapDispatchToProps = (state) => (
+  {
+    authenticated: state.auth.authenticated,
+  }
+);
+
+export default connect(mapDispatchToProps, signinUser)(SignIn);

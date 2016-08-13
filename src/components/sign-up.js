@@ -39,7 +39,7 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signup">
-        <h1> Sign In! </h1>
+        <h1> Sign Up! </h1>
 
         <div id="email">
           <input placeholder="Enter your email" value={this.state.email} onChange={this.emailWasChanged} />
@@ -59,5 +59,10 @@ class SignUp extends Component {
   }
 
 }
+const mapDispatchToProps = (state) => (
+  {
+    authenticated: state.auth.authenticated,
+  }
+);
 
-export default connect(null, signupUser)(SignUp);
+export default connect(mapDispatchToProps, signupUser)(SignUp);
