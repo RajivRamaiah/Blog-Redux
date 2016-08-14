@@ -3,8 +3,8 @@ import { browserHistory } from 'react-router';
 
 // const BASE_URL = 'https://cs52-blog.herokuapp.com/api';
 // const BASE_URL = 'https://backend-hw5.herokuapp.com/api';
-// const BASE_URL = 'https://backend-hw5pt2.herokuapp.com/api';
-const BASE_URL = 'http://localhost:9090/api';
+const BASE_URL = 'https://backend-hw5pt2.herokuapp.com/api';
+// const BASE_URL = 'http://localhost:9090/api';
 
 // keys for actiontypes
 export const ActionTypes = {
