@@ -1,3 +1,7 @@
-# Uses Custom Backend
+# HW5 Part 2, Authentication Working
 
-This version of the blog, hosted at http://backend-blog-rajivramaiah.surge.sh/ uses a MongoDB backend I created using Express.js and Node.js. That backend can be found here: https://github.com/RajivRamaiah/Backend-HW5
+This version of the blog, hosted at http://auth-backend-blog-rajivramaiah.surge.sh/ uses a MongoDB backend I created using Express.js and Node.js. That backend can be found here: https://github.com/RajivRamaiah/Backend-HW5 under the part2 branch.
+
+For this part of the lab I create a simple authentication interface for users to sign in and sign up to edit blogs that already exist and to create new blog posts. I had to create new actions to handle user sign up, sign in, sign out, as well as any auth errors that are thrown when users are trying to access pages when they haven't logged in. These errors only appear when a user who isn't logged in tries to edit a post which is forbidden. I also created an auth-reducer with three separate Action Types to handle authentication and to determine if the user accessing the website has signed in.
+
+With the authentication flow working, I then created two new sign in and sign up components with simple interfaces where users can enter their email, username, and password to sign up, and their email and password to sign in. These routes were added to the NavBar component and users would automatically see these instead of the "New Post" button if they hadn't signed in. This is because I created a require-auth container component that I wrapped my New Post interface component in the routes.js file to restrict access to it if a user wasn't signed in. I styled the separate components to look decent and to make the interface easier to use and understand.
