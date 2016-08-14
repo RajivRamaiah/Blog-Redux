@@ -176,12 +176,14 @@ class ShowPost extends Component {
     return (
       <div className="DisplayPost">
         <div id="header">
-          <div id="title">
-            {this.displayTitle()}
-          </div>
+          <div id="left">
+            <div id="title">
+              {this.displayTitle()}
+            </div>
 
-          <div id="author">
-            {`By: ${this.state.author}`}
+            <div id="author">
+              {`By: ${this.state.author}`}
+            </div>
           </div>
 
           <div id="tags">

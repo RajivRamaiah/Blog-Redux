@@ -33,10 +33,17 @@ hr.style1{
     font-size: 16pt;
   }
   .nav-not-auth {
+    display: flex;
+    flex-direction: row;
 
     #signin-button {
-      font-size: 12pt;
-      color: black;
+      color: #006600;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+      margin-right: 5px;
+      padding: 2px 10px 2px 2px;
+      font-size: 16pt;
 
       &:hover {
         color: #006600;
@@ -44,12 +51,30 @@ hr.style1{
     }
 
     #signup-button {
-      font-size: 12pt;
-      color: black;
+      color: #006600;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+      padding: 2px 2px 2px 2px;
+      font-size: 16pt;
 
       &:hover {
         color: #006600;
       }
+    }
+  }
+
+  .nav-auth {
+    display: flex;
+    flex-direction: row;
+
+    #signout {
+      color: #006600;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+      padding: 2px 2px 2px 2px;
+      font-size: 16pt;
     }
   }
 }
@@ -166,6 +191,18 @@ hr.style1{
     font-size: 25px;
     color: black;
 
+    #left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #author {
+      padding-top: 10px;
+      font-size: 20px;
+      padding-left: 3px;
+
+    }
+
     #title {
       padding-top: 10px;
       height: 50px;
@@ -192,5 +229,146 @@ hr.style1{
     text-align: center;
     border-radius: 5px;
     font-size: 16px;
+  }
+}
+// Source for input fields: http://www.w3schools.com/css/tryit.asp?filename=trycss_forms
+.Sign-In {
+
+  #email {
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  #password {
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  #buttons {
+    display: flex;
+    flex-direction: row;
+
+    #signin {
+      background-color: #f5ea82;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+      color: black;
+      padding: 15px 32px;
+      margin-right: 10px;
+      font-size: 18px;
+
+      &:hover {
+        background-color: #fbf6c9;
+      }
+    }
+
+    #cancel {
+      background-color: #636046;
+      color: #006600;
+      padding: 15px 32px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 16px;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+
+      &:hover {
+        background-color: #827f6a;
+      }
+    }
+  }
+}
+
+
+// Source for input fields: http://www.w3schools.com/css/tryit.asp?filename=trycss_forms
+.Sign-Up {
+
+  #email {
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  #password {
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  }
+
+  #username {
+    input {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+  }
+
+  #buttons {
+    display: flex;
+    flex-direction: row;
+
+    #signup {
+      background-color: #f5ea82;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+      color: black;
+      padding: 15px 32px;
+      margin-right: 10px;
+      font-size: 18px;
+
+      &:hover {
+        background-color: #fbf6c9;
+      }
+    }
+
+    #cancel {
+      background-color: #636046;
+      color: #006600;
+      padding: 15px 32px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 16px;
+      border-color: black;
+      border-radius: 5px;
+      border-style: solid;
+
+      &:hover {
+        background-color: #827f6a;
+      }
+    }
   }
 }

@@ -38,9 +38,8 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className="signin">
+      <div className="Sign-In">
         <h1> Sign In! </h1>
-
         <div id="email">
           <input placeholder="Enter your email" value={this.state.email} onChange={this.emailWasChanged} />
         </div>
@@ -52,7 +51,9 @@ class SignIn extends Component {
           <div id="signin" onClick={this.signUserIn}>
             Sign In
           </div>
-          <Link to="/">Cancel</Link>
+          <div id="cancel">
+            <Link to="/">Cancel</Link>
+          </div>
         </div>
       </div>
     );

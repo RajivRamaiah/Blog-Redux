@@ -47,8 +47,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="signup">
-        <h1> Sign Up! </h1>
+      <div className="Sign-Up">
+        <h1> Sign Up!!! </h1>
 
         <div id="email">
           <input placeholder="Enter your email" value={this.state.email} onChange={this.emailWasChanged} />
@@ -61,12 +61,12 @@ class SignUp extends Component {
         </div>
 
         <div id="buttons">
-          <div id="signup">
-            <button onClick={this.signUserUp}>
-              Sign Up!
-            </button>
+          <div id="signup" onClick={this.signUserUp}>
+            Sign Up
           </div>
-          <Link to="/">Cancel</Link>
+          <div id="cancel">
+            <Link to="/">Cancel</Link>
+          </div>
         </div>
       </div>
     );
